@@ -1,0 +1,57 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.hch.weather_report'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.hch.weather_report"
+        minSdk 32
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildFeatures{
+        viewBinding true
+    }
+    buildToolsVersion '30.0.3'
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+//    androidTestImplementation 'androidx.test:runner:1.4.0'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+//    testImplementation 'junit:junit:4.13.2'
+//    implementation 'androidx.test:core:1.5.0'
+    def room_version = "2.3.0"
+    androidTestImplementation 'androidx.test:core:1.4.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+//    implementation 'com.google.okhttp:okhttp:20120626'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+//    implementation 'com.squareup.okhttp:okhttp:2.7.5'
+    implementation files('C:\\Users\\hch\\.m2\\repository\\cn\\hutool\\hutool-all\\5.8.11\\hutool-all-5.8.11.jar')
+    implementation 'com.google.code.gson:gson:2.10.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
